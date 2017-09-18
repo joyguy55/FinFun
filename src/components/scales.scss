@@ -1,0 +1,45 @@
+.options_container {
+  margin: 20px 10px;
+  text-align: left;
+
+  h5 {
+    text-align: left;
+  }
+
+  .styles_container {
+    display: inline-block;
+    margin: auto;
+    .image_placeholder{
+      margin: 5px 7px;
+      width: 40px;
+      height: 40px;
+      background: #D3D3D3;
+    }
+    .radio_container{
+      width: 20px;
+      margin: auto;
+    }
+  }
+
+  .color_option {
+    display: inline-block;
+    margin: 5px 7px;
+    .outer_circle {
+       border-radius: 50%;
+       height: 30px;
+       width: 30px;
+       position: relative;
+       border: 1.5px solid #D3D3D3;
+      .inner_circle {
+         position: absolute;
+         background: #D3D3D3;
+         border-radius: 50%;
+         height: 25px;
+         width: 25px;
+         margin: 1.25px 0px 0px 1.25px;
+         vertical-align: middle;
+      }
+     }
+    }
+
+}
