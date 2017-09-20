@@ -1,37 +1,29 @@
 <template>
-    <div class="options_container">
-
-      <h5>Select Style</h5>
-
-      <div class="styles_container" v-for="style in styles">
-
-        <div class="image_placeholder"></div>
-
-        <div class="radio_container">
-          <div class="radio">
-            <input
-            :id="style.id"
-            type="radio"
-            v-model="picked"
-            :value="style.id"
-            v-on:click="colorOptionsReflow(style.id)">
-          </div>
+  <div id="app" class="container">
+      <div class="color_picker">
+          <button type="button"
+                  class="close close_box"
+                  aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+          </button>
+        <div class="popover_triangle"></div>
+        <div class="color_box"
+             v-for="color in colors"
+             :style="{background:color.color}"
+             :value="color.color"
+             v-on:click="changeColor({styleIndex: styleIndex, colorIndex: colorIndex, color:color.color})">
         </div>
       </div>
-
-     <div class="color_option" v-for="color in colors">
-      <div class="outer_circle">
-        <div class="inner_circle"></div>
-      </div>
-     </div>
-    </div>
+      <div class="color_choice"></div>
+  </div>
 </template>
 
 <script>
 import _ from 'underscore'
+import { mapActions } from 'vuex'
 
 export default {
-  name: 'navigation',
+  name: 'color_picker',
   data () {
     return {
       colors: [
@@ -59,22 +51,19 @@ export default {
          { color: "#2747ff", isActive: false },
          { color: "#9284ff", isActive: false },
          { color: "#4243F2", isActive: false },
-       ]
+       ],
     }
   },
+  props: ['styleIndex', 'colorIndex'],
   methods: {
-    selectTab:  function (selected_color) {
-      this.tabs.map( function(selected_color) {
-        selected_color.isActive = false
-      })
-      var index = _.findIndex(this.tabs, { name: selected_color})
-      this.tabs[index].isActive = true
-    }
+    ...mapActions([
+      'changeColor'
+    ]),
   },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  @import 'fin.scss'
+  @import 'color_picker.scss'
 </style>
