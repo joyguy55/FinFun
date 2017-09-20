@@ -1,6 +1,4 @@
 <template>
-  <div>
-
     <div class="options_container">
 
       <h5>Select Style</h5>
@@ -20,11 +18,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="options_container">
-
-     <h5>Fin Colors</h5>
 
      <div class="color_option" v-for="color in colors">
       <div class="outer_circle">
@@ -32,8 +25,6 @@
       </div>
      </div>
     </div>
-
-  </div>
 </template>
 
 <script>
