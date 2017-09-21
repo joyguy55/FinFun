@@ -31,14 +31,17 @@
       <div class="outer_circle"
            :value="color"
            :key="color"
-           v-on:click="selectColorIndex(color)">
+           v-on:click="selectColorAtIndex(color)">
         <div class="inner_circle"></div>
       </div>
      </div>
 
     </div>
 
-    <ColorPicker :styleIndex="styleIndex" :colorIndex="colorIndex"/>
+    <ColorPicker v-if="colorBox"
+                 :colorBox.sync="colorBox"
+                 :styleIndex="styleIndex"
+                 :colorIndex="colorIndex"/>
 
   </div>
 </template>
@@ -59,6 +62,7 @@ export default {
       colors: ["#003382","#FF3382","#484748","#287488","#2747ff","#9284ff"],
       styleIndex: 1,
       colorIndex: 0,
+      colorBox: false,
     }
   },
   computed: {
@@ -73,9 +77,10 @@ export default {
       this.colors = this.scaleStyles[index].colors
       this.styleIndex = index
     },
-    selectColorIndex: function (color) {
+    selectColorAtIndex: function (color) {
       let index = this.colors.indexOf(color)
       this.colorIndex = index
+      this.colorBox = true
     }
   },
 }

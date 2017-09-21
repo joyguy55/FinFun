@@ -3,7 +3,8 @@
       <div class="color_picker">
           <button type="button"
                   class="close close_box"
-                  aria-label="Close">
+                  aria-label="Close"
+                  v-on:click="closeColorBox()">
            <span aria-hidden="true">&times;</span>
           </button>
         <div class="popover_triangle"></div>
@@ -54,11 +55,14 @@ export default {
        ],
     }
   },
-  props: ['styleIndex', 'colorIndex'],
+  props: ['styleIndex', 'colorIndex', 'colorBox'],
   methods: {
     ...mapActions([
       'changeColor'
     ]),
+    closeColorBox() {
+      this.$emit('update:colorBox', false)
+    }
   },
 }
 </script>
