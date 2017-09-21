@@ -33,22 +33,22 @@
         styles: [{
             id: 1,
             colors: [1],
-            image: '../assets-imgs/fin-1.svg'
+            image: 'https://www.finfunmermaid.com/images/custom-tails-assets/fin-1.svg'
           },
           {
             id: 2,
             colors: [1, 2],
-            image: './assets/fin-2.png'
+            image: 'https://www.finfunmermaid.com/images/custom-tails-assets/fin-2.svg'
           },
           {
             id: 3,
             colors: [1, 2, 3],
-            image: '../assets/fin-3.png'
+            image: 'https://www.finfunmermaid.com/images/custom-tails-assets/fin-3.svg'
           },
           {
             id: 4,
             colors: [1, 2, 3, 4],
-            image: '../assets/fin-4.png'
+            image: 'https://www.finfunmermaid.com/images/custom-tails-assets/fin-4.svg'
           }
         ],
         picked: 1,

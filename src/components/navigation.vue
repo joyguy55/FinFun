@@ -2,7 +2,7 @@
   <div id="app" class="container">
 
     <ul class="nav nav-tabs">
-      <li v-bind:class="[ tab.isActive ? 'nav-tab active' : 'nav-tab' ]" v-for="tab in tabs">
+      <li :class="[ tab.isActive ? 'nav-tab active' : 'nav-tab' ]" v-for="tab in tabs">
         <router-link
           :to="tab.path"
           class="nav-link"

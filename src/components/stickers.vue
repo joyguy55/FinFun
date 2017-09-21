@@ -9,13 +9,14 @@
           </button>
 
       </div>
-
+      <Sticker />
     </div>
 </div>
 </template>
 
 <script>
   import _ from 'underscore'
+  import Sticker from './sub/sticker_picker'
 
   export default {
     name: 'navigation',
@@ -30,7 +31,10 @@
         }]
       }
     },
-    methods: {}
+    methods: {},
+    components:{
+        Sticker,
+    }
   }
 </script>
 
