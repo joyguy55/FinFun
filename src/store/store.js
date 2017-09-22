@@ -2,10 +2,21 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import _  from 'lodash'
 import { router } from '../main.js'
+import { mutations } from './mutations.js'
+import { actions } from './actions.js'
+import createLogger from 'vuex/dist/logger'
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
+
+  plugins: [createLogger({
+    collapsed: false,
+  })],
+
+  mutations: mutations,
+  actions: actions,
+
   state: {
 
     tailSizeRange: '',
@@ -48,61 +59,28 @@ export const store = new Vuex.Store({
                         colors: ["#003382","#FF3382","#484748"],
                         image: 'https://www.finfunmermaid.com/images/custom-tails-assets/fin-1.svg'
                       },
-  },
 
-  mutations: {
+    filters: [
+      { id: 1,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-1.png" },
+      { id: 2,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-2.png" },
+      { id: 3,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-3.png" },
+      { id: 4,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-4.png" },
+      { id: 5,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-5.png" }
+    ],
 
-    changeColor: (state, payload) => {
-      const typeObj = {
-        'scale': function(payload){
-          state.scaleStyles[payload.styleIndex].colors[payload.colorIndex] = payload.color
-          const deepObj = _.cloneDeep(state.scaleStyles[payload.styleIndex])
-          state.selectedFinStyle = deepObj
-        },
-        'fin': function(payload){
-          state.finStyles[payload.styleIndex].colors[payload.colorIndex] = payload.color
-          const deepObj = _.cloneDeep(state.finStyles[payload.styleIndex])
-          state.selectedFinStyle = deepObj
-        },
-        'default': function(){
-          console.log("You must insert a valid type!");
-        }
-      }
-      return (typeObj[payload.type] || obj["default"])(payload)
-    },
+    selectedFilter: {},
 
-    selectStyle: (state, payload) => {
-      const typeObj = {
-        'scale': function(payload){
-          state.selectedScaleStyle = state.scaleStyles[payload.styleIndex]
-        },
-        'fin': function(payload){
-          state.selectedFinStyle = state.finStyles[payload.styleIndex]
-        },
-        'default': function(){
-          console.log("You must insert a valid type!");
-        }
-      }
-      return (typeObj[payload.type] || obj["default"])(payload)
-    },
+    stickers: [
 
-    setTailSizeRange: (state, payload) => {
-      state.tailSizeRange = payload.size
-    }
+    ],
+
+    selectedStickers: {},
 
   },
-
-  actions: {
-    selectStyle: ({ commit }, payload) => {
-      commit('changeColor', payload)
-    },
-    changeColor: ({ commit }, payload) => {
-      commit('changeColor', payload)
-    },
-    setTailSizeRange: ({ commit }, payload) => {
-      commit('setTailSizeRange', payload)
-      // router.push("/customize/scales")
-    }
-  }
 
 })

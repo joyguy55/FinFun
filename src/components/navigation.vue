@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app" class="nav_container">
 
     <ul class="nav nav-tabs">
       <li :class="[ tab.isActive ? 'nav-tab active' : 'nav-tab' ]" v-for="tab in tabs">

@@ -4,13 +4,13 @@
 
       <h5>Select Style</h5>
 
-      <div class="styles_container" v-for="style in styles">
+      <div class="styles_container" v-for="filter in filters">
           <div class="styles_box">
-          <img src="https://www.finfunmermaid.com/images/custom-tails-assets/filters-1.png" class="img-responsive">
+          <img :src="filter.image" class="img-responsive">
           </div>
           <div class="styles_radio">
-            <input :id="style" name="radio" type="radio" checked>
-            <label :for="style" class="radio-label"></label>
+            <input :id="filter.id" name="radio" type="radio" v-on:click="selectStyle({ type:type, filterIndex:filter.id})">
+            <label :for="filter.id" class="radio-label"></label>
           </div>
       </div>
        <button id="button_override" class="btn btn-default btn-xs">Clear Filters</button>
@@ -20,16 +20,25 @@
 
 <script>
 import _ from 'underscore'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'navigation',
   data () {
     return {
-      styles: ['radio-1','radio-2','radio-3','radio-4','radio-5'],
-      colors: [1,2,3,4,5,6]
+      type: 'filter'
     }
   },
+  computed: {
+    ...mapState({
+      filters: state => state.filters,
+      selectedFilter: state => state.selectedFilter
+    })
+  },
   methods: {
+    ...mapActions([
+      'selectStyle'
+    ])
   }
 }
 </script>
