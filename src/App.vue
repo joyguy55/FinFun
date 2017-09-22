@@ -1,8 +1,12 @@
 <template>
-  <div id="app">
-    <Display/>
-    <router-view></router-view>
+<div id="app">
+  <div class="header">
+    <div class="fin_fun_logo"></div>
+    <div class="custom_tails_logo"></div>
   </div>
+  <Display class="col-sm-6" />
+  <router-view class="col-sm-6"></router-view>
+</div>
 </template>
 
 <script>
@@ -17,15 +21,7 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 60px auto;
-  width: 800px;
-}
+<style lang="scss" scoped>
+@import 'App.scss'
 </style>
+>

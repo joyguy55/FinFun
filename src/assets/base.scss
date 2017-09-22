@@ -45,6 +45,10 @@ small {
     color: $sc-DGray;
   }
 }
+
+.selected {
+  border: 1px solid $sc-HLBlue;
+}
 // #app {
 //   transform: scale(2);
 // }
