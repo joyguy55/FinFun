@@ -1,32 +1,50 @@
 @font-face {
   font-family: 'zonoPro';
-  src: url('https://www.finfunmermaid.com/fonts/ZonaPro.woff') format('woff');
+  src: url('https://www.finfunmermaid.com/fonts/ZonaPro.woff') format('woff2'), url('https://www.finfunmermaid.com/fonts/ZonaPro.woff') format('woff2');
+}
+@import url( 'https://fonts.googleapis.com/css?family=Cabin');
+$sc-White: white;
+$sc-LGray: lightgray;
+$sc-DGray: darkgray;
+$sc-HLBlue: dodgerblue;
+
+body {
+  font-family: 'Cabin', Helvetica Neue, sans-serif;
 }
 
-$sc-White : white;
-$sc-LGray : lightgray;
-$sc-DGray : darkgray;
-$sc-HLBlue : dodgerblue;
+h5,
+small {
+  text-align: left;
+  text-transform: uppercase;
+  margin-left: 5px;
+}
 
 h5 {
-    text-align: left;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    margin-left: 5px;
+  font-size: 1.2rem;
+}
+
+small {
+  font-size: 10px;
+  display: block;
+  width: 190px;
+  margin-top: 3px;
 }
 
 #button_override {
   display: block;
   outline: none;
   background: $sc-White;
-  float: right;
   text-transform: uppercase;
   border: none;
   box-shadow: none;
   text-decoration: underline;
+  color: $sc-HLBlue;
 
   &:active,
   &:hover {
-    color: $sc-HLBlue;
+    color: $sc-DGray;
   }
 }
+// #app {
+//   transform: scale(2);
+// }
