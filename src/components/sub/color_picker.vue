@@ -12,7 +12,12 @@
              v-for="color in colors"
              :style="{background:color.color}"
              :value="color.color"
-             v-on:click="changeColor({styleIndex: styleIndex, colorIndex: colorIndex, color:color.color})">
+             v-on:click="changeColor({
+                type: type,
+                styleIndex: styleIndex,
+                colorIndex: colorIndex,
+                color:color.color
+                })">
         </div>
       </div>
       <div class="color_choice"></div>
@@ -55,7 +60,7 @@ export default {
        ],
     }
   },
-  props: ['styleIndex', 'colorIndex', 'colorBox'],
+  props: ['type','styleIndex', 'colorIndex', 'colorBox'],
   methods: {
     ...mapActions([
       'changeColor'
