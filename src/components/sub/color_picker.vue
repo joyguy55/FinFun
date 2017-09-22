@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <!-- <div> -->
       <div class="color_picker">
           <button type="button"
                   class="close close_box"
@@ -19,9 +19,9 @@
                 color:color.color
                 })">
         </div>
+        <div class="color_choice"></div>
       </div>
-      <div class="color_choice"></div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>

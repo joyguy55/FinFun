@@ -17,8 +17,8 @@
       border: 1px solid $sc-DGray;
     }
 
-    .styles_box_selected {
-      border: 1px solid dodgerblue;
+    .selected {
+      border: 1px solid $sc-HLBlue;
     }
 
     .styles_radio {
@@ -38,22 +38,25 @@
       transition: 0.5s;
 
       .inner_circle {
-        background: darkblue;
         border-radius: 50%;
-        height: 30px;
-        width: 30px;
+        height: 28px;
+        width: 28px;
         top: 50%;
         left: 50%;
-        margin: 1px;
-        &:focus, &:hover, &:active {
-          transition: 0.1s;
+        margin: 2px;
+
+        &:active,
+        &:focus,
+        &:hover {
+          transition: 0.2s;
           transform: scale(1.2);
         }
       }
     }
   }
-  .color_picker{
-      position: absolute;
-      top: -93px;
+
+  .color_picker {
+    position: absolute;
+    top: -93px;
   }
 }
