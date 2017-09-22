@@ -5,18 +5,16 @@
       <h5>Select Style</h5>
 
       <div class="styles_container" v-for="style in scaleStyles">
-
-        <div class="image_placeholder"></div>
-
-        <div class="radio_container">
-          <div class="radio">
+            <div class="styles_box">
+                <img src="https://www.finfunmermaid.com/images/custom-tails-assets/scale-1.png" class="fin_choice img-responsive">
+            </div>
+        <div class="styles_radio">
             <input
             :id="style.id"
             type="radio"
             v-model="picked"
             :value="style.id"
             v-on:click="selectScaleStyle(style.id)">
-          </div>
         </div>
       </div>
 
@@ -32,58 +30,62 @@
            :value="color"
            :key="color"
            v-on:click="selectColorAtIndex(color)">
-        <div class="inner_circle"></div>
+        <div class="inner_circle" :style="{background: color}"></div>
       </div>
      </div>
 
-    </div>
-
-    <ColorPicker v-if="colorBox"
+    <ColorPicker class="color_picker"
+                  v-if="colorBox"
                  :colorBox.sync="colorBox"
                  :styleIndex="styleIndex"
                  :colorIndex="colorIndex"/>
-
+    </div>
   </div>
 </template>
 
 <script>
-import _ from 'underscore'
-import ColorPicker from './sub/color_picker.vue'
-import { mapState } from 'vuex'
+  import _ from 'underscore'
+  import ColorPicker from './sub/color_picker.vue'
+  import {
+    mapState
+  } from 'vuex'
 
-export default {
-  name: 'navigation',
-  components: {
-    ColorPicker
-  },
-  data () {
-    return {
-      picked: 1,
-      colors: ["#003382","#FF3382","#484748","#287488","#2747ff","#9284ff"],
-      styleIndex: 1,
-      colorIndex: 0,
-      colorBox: false,
-    }
-  },
-  computed: {
-    ...mapState({
+  export default {
+    name: 'navigation',
+    components: {
+      ColorPicker
+    },
+    data() {
+      return {
+        picked: 1,
+        colors: ["#003382", "#FF3382", "#484748", "#287488", "#2747ff", "#9284ff"],
+        styleIndex: 1,
+        colorIndex: 0,
+        colorBox: false,
+        image: 'https://www.finfunmermaid.com/images/custom-tails-assets/scale-1.png'
+      }
+    },
+    computed: {
+      ...mapState({
         scaleStyles: state => state.scaleStyles,
         selectedScaleStyle: state => state.selectedScaleStyle
-    })
-  },
-  methods: {
-    selectScaleStyle: function (styleId) {
-      let index = _.findIndex(this.scaleStyles, { id: styleId})
-      this.colors = this.scaleStyles[index].colors
-      this.styleIndex = index
+      })
     },
-    selectColorAtIndex: function (color) {
-      let index = this.colors.indexOf(color)
-      this.colorIndex = index
-      this.colorBox = true
-    }
-  },
-}
+    methods: {
+      selectScaleStyle: function(styleId) {
+        let index = _.findIndex(this.scaleStyles, {
+          id: styleId
+        })
+        this.colors = this.scaleStyles[index].colors
+        this.styleIndex = index
+      },
+      selectColorAtIndex: function(color) {
+        let index = this.colors.indexOf(color)
+        this.colorIndex = index
+        this.colorBox = true
+      }
+    },
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

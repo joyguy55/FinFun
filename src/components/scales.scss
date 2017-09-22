@@ -1,45 +1,59 @@
+@import '../assets/base.scss';
+
 .options_container {
   margin: 20px 10px;
   text-align: left;
-
-  h5 {
-    text-align: left;
-  }
+  position: relative;
 
   .styles_container {
     display: inline-block;
-    margin: auto;
-    .image_placeholder{
-      margin: 5px 7px;
-      width: 40px;
-      height: 40px;
-      background: #D3D3D3;
+    margin: 0 auto;
+    text-align: center;
+
+    .styles_box {
+      width: 45px;
+      height: 45px;
+      margin: 0 4px;
+      border: 1px solid $sc-DGray;
     }
-    .radio_container{
-      width: 20px;
-      margin: auto;
+
+    .styles_box_selected {
+      border: 1px solid dodgerblue;
+    }
+
+    .styles_radio {
+      display: inline-block;
     }
   }
-
+  // Color Selection Button
   .color_option {
     display: inline-block;
-    margin: 5px 7px;
-    .outer_circle {
-       border-radius: 50%;
-       height: 30px;
-       width: 30px;
-       position: relative;
-       border: 1.5px solid #D3D3D3;
-      .inner_circle {
-         position: absolute;
-         background: #D3D3D3;
-         border-radius: 50%;
-         height: 25px;
-         width: 25px;
-         margin: 1.25px 0px 0px 1.25px;
-         vertical-align: middle;
-      }
-     }
-    }
+    margin: 0 5px;
 
+    .outer_circle {
+      border-radius: 50%;
+      height: 34px;
+      width: 34px;
+      border: 1px solid $sc-LGray;
+      transition: 0.5s;
+
+      .inner_circle {
+        background: darkblue;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        top: 50%;
+        left: 50%;
+        margin: 1px;
+        &:focus, &:hover, &:active {
+          transition: 0.1s;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+  .color_picker{
+      position: absolute;
+      top: -93px;
+  }
 }

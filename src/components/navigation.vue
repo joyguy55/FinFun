@@ -6,13 +6,14 @@
         <router-link
           :to="tab.path"
           class="nav-link"
-          v-on:click="selectTab(tab.name)">
+          v-on:click="selectTab(tab.name)"
+          data-toggle="tab">
           {{tab.name}}
         </router-link>
       </li>
     </ul>
 
-    <router-view></router-view>
+    <router-view class="tab-content"></router-view>
 
   </div>
 </template>

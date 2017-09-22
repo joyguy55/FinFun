@@ -5,16 +5,15 @@
       <h5>Select Style</h5>
 
       <div class="styles_container" v-for="style in styles">
-
-        <div class="image_placeholder"></div>
-
-        <div class="radio_container">
-          <div class="radio">
+          <div class="styles_box">
+          <img src="https://www.finfunmermaid.com/images/custom-tails-assets/filters-1.png" class="img-responsive">
+          </div>
+          <div class="styles_radio">
             <input :id="style" name="radio" type="radio" checked>
             <label :for="style" class="radio-label"></label>
           </div>
-        </div>
       </div>
+       <button id="button_override" class="btn btn-default btn-xs">Clear Filters</button>
     </div>
   </div>
 </template>
