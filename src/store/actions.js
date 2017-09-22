@@ -1,5 +1,9 @@
 export const actions = {
 
+  selectSticker: ({ commit }, payload) => {
+    commit('selectSticker', payload)
+  },
+
   selectStyle: ({ commit }, payload) => {
     commit('selectStyle', payload)
   },

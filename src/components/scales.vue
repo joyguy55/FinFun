@@ -25,7 +25,7 @@
 
      <h5>Scale Colors</h5>
 
-     <div class="color_option" v-for="color in colors">
+     <div class="color_option" v-for="color in selectedScaleStyle.colors">
       <div class="outer_circle"
            :value="color"
            :key="color"
@@ -38,7 +38,8 @@
                   v-if="colorBox"
                  :colorBox.sync="colorBox"
                  :styleIndex="styleIndex"
-                 :colorIndex="colorIndex"/>
+                 :colorIndex="colorIndex"
+                 :type="type"/>
     </div>
   </div>
 </template>
@@ -58,11 +59,11 @@
     data() {
       return {
         picked: 1,
-        colors: ["#003382", "#FF3382", "#484748", "#287488", "#2747ff", "#9284ff"],
         styleIndex: 1,
         colorIndex: 0,
         colorBox: false,
-        image: 'https://www.finfunmermaid.com/images/custom-tails-assets/scale-1.png'
+        image: 'https://www.finfunmermaid.com/images/custom-tails-assets/scale-1.png',
+        type: 'scale'
       }
     },
     computed: {
@@ -76,11 +77,14 @@
         let index = _.findIndex(this.scaleStyles, {
           id: styleId
         })
-        this.colors = this.scaleStyles[index].colors
         this.styleIndex = index
+        this.$store.dispatch( 'selectStyle', {
+          type: this.type,
+          styleIndex: this.styleIndex
+        } )
       },
       selectColorAtIndex: function(color) {
-        let index = this.colors.indexOf(color)
+        let index = this.selectedScaleStyle.colors.indexOf(color)
         this.colorIndex = index
         this.colorBox = true
       }

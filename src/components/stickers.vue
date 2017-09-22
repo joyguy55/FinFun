@@ -1,37 +1,50 @@
 <template>
-<div>
-    <div class="options_container">
+  <div>
+      <div class="options_container">
 
-      <div class="styles_container" v-for="style in names">
-          <h4>{{style.name}}</h4>
-          <button type="button" class="btn btn-default btn-sm" id="plus_button">
-            <span class="glyphicon glyphicon-plus-sign"></span>
-          </button>
-
+        <div class="styles_container" v-for="sticker in selectedStickers">
+            <h4>{{sticker.name}}</h4>
+            <button type="button"
+                    class="btn btn-default btn-sm"
+                    id="plus_button"
+                    v-on:click="currentStickerOption(sticker.index)">
+              <div v-if="!sticker.image">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+              </div>
+              <div v-else>
+                <img :src="sticker.image">
+              </div>
+            </button>
+        </div>
+        <Sticker :stickerArr="selectedStickers[position].stickerIds"
+                 :position="position"/>
       </div>
-      <Sticker />
-    </div>
-</div>
+  </div>
 </template>
 
 <script>
   import _ from 'underscore'
   import Sticker from './sub/sticker_picker'
+  import { mapState, mapActions } from 'vuex'
 
   export default {
     name: 'navigation',
     data() {
       return {
-        names: [{
-          name: 'Waist'
-        }, {
-          name: 'Body'
-        }, {
-          name: 'Fin'
-        }]
+        position: 0,
       }
     },
-    methods: {},
+    computed: {
+      ...mapState({
+        stickers: state => state.stickers,
+        selectedStickers: state => state.selectedStickers
+      }),
+    },
+    methods: {
+      currentStickerOption(index) {
+        this.position = index
+      }
+    },
     components:{
         Sticker,
     }

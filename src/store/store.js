@@ -76,10 +76,31 @@ export const store = new Vuex.Store({
     selectedFilter: {},
 
     stickers: [
+      { id: 0,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/sticker-waist-1.svg" },
+      { id: 1,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/sticker-waist-2.svg" },
+      { id: 2,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/sticker-waist-3.svg" },
+      { id: 3,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-4.png" },
+      { id: 4,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-5.png" },
+      { id: 5,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-4.png" },
+      { id: 6,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-5.png" },
+      { id: 7,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-5.png" },
+      { id: 8,
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-5.png" }
+      ],
 
-    ],
-
-    selectedStickers: {},
+    selectedStickers: [
+          { name: 'Waist', stickerIds:[0,3], index: 0, image:false},
+          { name: 'Body', stickerIds:[4,6], index: 1, image:false},
+          { name: 'Fin', stickerIds:[6,9], index: 2, image:false}
+        ]
 
   },
 

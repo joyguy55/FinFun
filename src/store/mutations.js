@@ -5,9 +5,11 @@ export const mutations = {
       'scale': function(payload){
         state.scaleStyles[payload.styleIndex].colors[payload.colorIndex] = payload.color
         const deepObj = _.cloneDeep(state.scaleStyles[payload.styleIndex])
-        state.selectedFinStyle = deepObj
+        console.log(deepObj)
+        state.selectedScaleStyle = deepObj
       },
       'fin': function(payload){
+        console.log('fin')
         state.finStyles[payload.styleIndex].colors[payload.colorIndex] = payload.color
         const deepObj = _.cloneDeep(state.finStyles[payload.styleIndex])
         state.selectedFinStyle = deepObj
@@ -35,6 +37,10 @@ export const mutations = {
       }
     }
     return (typeObj[payload.type] || typeObj["default"])(payload)
+  },
+
+  selectSticker: (state, payload) => {
+    state.selectedStickers[payload.index].image = state.stickers[payload.id].image
   },
 
   setTailSizeRange: (state, payload) => {
