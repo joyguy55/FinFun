@@ -3,6 +3,7 @@
 .nav_container {
   width: 320px !important;
   height: 320px;
+  padding: 0;
   display: inline-block;
   margin: 0 10px;
   vertical-align: top;
@@ -14,21 +15,38 @@
   }
 }
 
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:focus,
-.nav-tabs > li.active > a:hover {
-  color: $sc-HLBlue;
-  background: white;
-  margin: 0;
-  border: none;
+.navi-tabs {
+  height: 24px;
+  background: $sc-DGray;
+  width: 100%;
+  padding: 0;
+  border-radius: 5px;
 }
 
-.nav-tabs > li > a {
+.navi-tabs > a > li {
+  display: block;
+  font-size: 12px;
+  height: 25px;
+  line-height: 26px;
+  float: left;
+  width: 25%;
   background: $sc-LGray;
   color: Gray;
+  text-decoration: none;
+  border-radius: 5px 5px 0 0;
+  // border-top: 1px solid darkgray;
+  // border-left: 1px solid darkgray;
+  // border-right: 1px solid darkgray;
+  text-transform: uppercase;
+
+  &:hover {
+    background: white;
+  }
 }
 
-.nav-tabs {
+a.router-link-active > li {
+  color: $sc-HLBlue;
+  background: white;
   border: none;
-  background: green;
+  font-weight: bold;
 }

@@ -1,12 +1,12 @@
 <template>
 <div class="nav_container col-sm-4">
 
-  <ul class="nav nav-tabs">
-    <li :class="[ tab.isActive ? 'nav-tab active' : 'nav-tab' ]" v-for="tab in tabs">
-      <router-link :to="tab.path" class="nav-link" v-on:click="selectTab(tab.name)" data-toggle="tab">
+  <ul class="navi-tabs">
+    <router-link :to="tab.path" class="nav-link" v-on:click="selectTab(tab.name)" v-for="tab in tabs">
+      <li :class="[ tab.isActive ? 'navi-tab active' : 'navi-tab' ]">
         {{tab.name}}
-      </router-link>
-    </li>
+      </li>
+    </router-link>
   </ul>
 
   <router-view class="tab-content"></router-view>

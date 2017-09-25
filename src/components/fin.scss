@@ -17,8 +17,8 @@
       border: 1px solid $sc-DGray;
     }
 
-    .styles_radio {
-      display: inline-block;
+    .selected {
+      border: 1px solid $sc-HLBlue;
     }
   }
   // Color Selection Button

@@ -8,6 +8,7 @@
     display: inline-block;
     margin: auto;
   }
+
   .styles_container {
     display: inline-block;
     margin: 0 auto;
@@ -18,8 +19,10 @@
       height: 45px;
       margin: 0 4px;
       border: 1px solid $sc-DGray;
+    }
 
-      .fin_choice {}
+    .selected {
+      border: 1px solid $sc-HLBlue;
     }
 
     .styles_box_selected {

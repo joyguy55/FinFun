@@ -4,11 +4,9 @@
 
     <h5>Select Fin Style</h5>
 
-    <div :class="[ style.isActive ? 'styles_container active' : 'styles_container' ]" v-for="style in finStyles">
-      <div class="styles_box">
-        <img :src="style.image"
-             class="fin_choice"
-             v-on:click="selectScaleStyle(style.id)">
+    <div class="styles_container" v-for="style in finStyles">
+      <div :class="[ style.isActive ? 'styles_box selected' : 'styles_box' ]">
+        <img :src="style.image" class="fin_choice" v-on:click="selectScaleStyle(style.id)">
       </div>
     </div>
   </div>
