@@ -6,11 +6,9 @@
 
       <div class="styles_container" v-for="filter in filters">
           <div class="styles_box">
-          <img :src="filter.image" class="img-responsive">
-          </div>
-          <div class="styles_radio">
-            <input :id="filter.id" name="radio" type="radio" v-on:click="selectStyle({ type:type, filterIndex:filter.id})">
-            <label :for="filter.id" class="radio-label"></label>
+          <img :src="filter.image"
+               class="img-responsive"
+               v-on:click="selectStyle({ type:type, filterIndex:filter.id})">
           </div>
       </div>
        <button id="button_override" class="btn btn-default btn-xs">Clear Filters</button>

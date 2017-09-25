@@ -6,10 +6,9 @@
 
     <div class="styles_container" v-for="style in finStyles">
       <div class="styles_box">
-        <img :src="style.image" class="fin_choice">
-      </div>
-      <div class="styles_radio">
-        <input :id="style.id" type="radio" v-model="picked" :value="style.id" v-on:click="selectScaleStyle(style.id)">
+        <img :src="style.image"
+             class="fin_choice"
+             v-on:click="selectScaleStyle(style.id)">
       </div>
     </div>
   </div>
@@ -43,7 +42,6 @@ export default {
   name: 'navigation',
   data() {
     return {
-      picked: 1,
       styleIndex: 0,
       colorIndex: 0,
       colorBox: false,

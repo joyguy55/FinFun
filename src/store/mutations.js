@@ -1,42 +1,47 @@
 export const mutations = {
 
   changeColor: (state, payload) => {
-    const typeObj = {
-      'scale': function(payload){
+    switch(payload.type){
+
+      case 'scale':
         state.scaleStyles[payload.styleIndex].colors[payload.colorIndex] = payload.color
-        const deepObj = _.cloneDeep(state.scaleStyles[payload.styleIndex])
-        console.log(deepObj)
-        state.selectedScaleStyle = deepObj
-      },
-      'fin': function(payload){
-        console.log('fin')
+        const scaleObj = _.cloneDeep(state.scaleStyles[payload.styleIndex])
+        state.selectedScaleStyle = scaleObj
+      break
+
+      case 'fin':
         state.finStyles[payload.styleIndex].colors[payload.colorIndex] = payload.color
-        const deepObj = _.cloneDeep(state.finStyles[payload.styleIndex])
-        state.selectedFinStyle = deepObj
-      },
-      'default': function(){
+        const finObj = _.cloneDeep(state.finStyles[payload.styleIndex])
+        state.selectedFinStyle = finObj
+      break
+
+      case 'default':
         console.log("You must insert a valid color type!");
-      }
+      break
+
     }
-    return (typeObj[payload.type] || typeObj["default"])(payload)
   },
 
   selectStyle: (state, payload) => {
-    const typeObj = {
-      'scale': function(payload){
+    switch(payload.type){
+
+      case 'scale':
         state.selectedScaleStyle = state.scaleStyles[payload.styleIndex]
-      },
-      'fin': function(payload){
+      break
+
+      case 'fin':
         state.selectedFinStyle = state.finStyles[payload.styleIndex]
-      },
-      'filter': function(payload){
+      break
+
+      case 'filter':
         state.selectedFilter = state.filters[payload.filterIndex]
-      },
-      'default': function(){
-        console.log("You must insert a valid style type!");
-      }
+      break
+
+      case 'default':
+        console.log("You must insert a valid color type!");
+      break
+
     }
-    return (typeObj[payload.type] || typeObj["default"])(payload)
   },
 
   selectSticker: (state, payload) => {

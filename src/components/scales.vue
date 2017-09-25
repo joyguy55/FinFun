@@ -6,16 +6,10 @@
 
       <div class="styles_container" v-for="style in scaleStyles">
             <div class="styles_box">
-                <img src="https://www.finfunmermaid.com/images/custom-tails-assets/scale-1.png" class="fin_choice img-responsive">
+                <img src="https://www.finfunmermaid.com/images/custom-tails-assets/scale-1.png"
+                     class="fin_choice img-responsive"
+                     v-on:click="selectScaleStyle(style.id)">
             </div>
-        <div class="styles_radio">
-            <input
-            :id="style.id"
-            type="radio"
-            v-model="picked"
-            :value="style.id"
-            v-on:click="selectScaleStyle(style.id)">
-        </div>
       </div>
 
 
@@ -58,8 +52,7 @@
     },
     data() {
       return {
-        picked: 1,
-        styleIndex: 1,
+        styleIndex: 0,
         colorIndex: 0,
         colorBox: false,
         image: 'https://www.finfunmermaid.com/images/custom-tails-assets/scale-1.png',
