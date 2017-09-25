@@ -8,7 +8,7 @@
         <img :src="sticker.image">
     </button>
     <button type="reset" id="clear_options" class="btn btn-default btn-sm">clear</button>
-    <div class="popover_triangle"></div>
+    <div class="popover_triangle" :style="{left:triangleLocation}"></div>
   </div>
 </div>
 </template>
@@ -34,6 +34,10 @@ export default {
       stickers: state => state.stickers,
       selectedStickers: state => state.selectedStickers
     } ),
+    triangleLocation(){
+      let leftArr = ['23.5%','55.5%','88.3%']
+      return leftArr[this.position]
+    },
     stickerSet() {
       const predicate = ( start, end ) => {
         return ( sticker ) => {

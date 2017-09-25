@@ -7,7 +7,7 @@
                   v-on:click="closeColorBox()">
            <span aria-hidden="true">&times;</span>
           </button>
-        <div class="popover_triangle"></div>
+        <div class="popover_triangle" :style="{left:triangleLocation}"></div>
         <div class="color_box"
              v-for="color in colors"
              :style="{background:color.color}"
@@ -61,6 +61,12 @@ export default {
     }
   },
   props: ['type','styleIndex', 'colorIndex', 'colorBox'],
+  computed: {
+    triangleLocation(){
+      let leftArr = ['2.5%','19%','35.8%','52.5%','69.2%','86%']
+      return leftArr[this.colorIndex]
+    }
+  },
   methods: {
     ...mapActions([
       'changeColor'
