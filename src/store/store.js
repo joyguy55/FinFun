@@ -23,15 +23,20 @@ export const store = new Vuex.Store({
 
     scaleStyles: [
       { id: 1,
-        colors: ["#003382","#FF3382","#484748","#287488","#2747ff","#9284ff"] },
+        colors: ["#003382","#FF3382","#484748","#287488","#2747ff","#9284ff"],
+        image: 'https://www.finfunmermaid.com/images/custom-tails-assets/scale-1.png' },
       { id: 2,
-        colors: ["#003382","#FF3382"] },
+        colors: ["#003382","#FF3382"],
+    image: 'https://www.finfunmermaid.com/images/custom-tails-assets/scale-2.png' },
       { id: 3,
-        colors: ["#003382","#FF3382","#484748","#287488"] },
+        colors: ["#003382","#FF3382","#484748","#287488"],
+    image: 'https://www.finfunmermaid.com/images/custom-tails-assets/scale-3.png' },
       { id: 4,
-        colors: ["#003382","#FF3382","#484748","#287488"] },
+        colors: ["#003382","#FF3382","#484748","#287488"],
+    image: 'https://www.finfunmermaid.com/images/custom-tails-assets/scale-4.png' },
       { id: 5,
-        colors: ["#003382","#FF3382","#484748","#287488"] }
+        colors: ["#003382","#FF3382","#484748","#287488"],
+    image: 'https://www.finfunmermaid.com/images/custom-tails-assets/scale-5.png' }
     ],
 
     selectedScaleStyle: { id: 1, colors: ["#003382","#FF3382","#484748","#287488","#2747ff","#9284ff"] },
@@ -83,23 +88,18 @@ export const store = new Vuex.Store({
       { id: 2,
         image: "https://www.finfunmermaid.com/images/custom-tails-assets/sticker-waist-3.svg" },
       { id: 3,
-        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-4.png" },
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/sticker-body-1.svg" },
       { id: 4,
-        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-5.png" },
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/sticker-body-2.svg" },
       { id: 5,
-        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-4.png" },
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/sticker-fin-1.svg" },
       { id: 6,
-        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-5.png" },
-      { id: 7,
-        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-5.png" },
-      { id: 8,
-        image: "https://www.finfunmermaid.com/images/custom-tails-assets/filters-5.png" }
-      ],
-
+        image: "https://www.finfunmermaid.com/images/custom-tails-assets/sticker-fin-2.svg" },
+],
     selectedStickers: [
           { name: 'Waist', stickerIds:[0,3], index: 0, image:false},
-          { name: 'Body', stickerIds:[4,6], index: 1, image:false},
-          { name: 'Fin', stickerIds:[6,9], index: 2, image:false}
+          { name: 'Body', stickerIds:[3,5], index: 1, image:false},
+          { name: 'Fin', stickerIds:[5,7], index: 2, image:false}
         ]
 
   },

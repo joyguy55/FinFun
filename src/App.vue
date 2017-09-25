@@ -4,8 +4,8 @@
     <div class="fin_fun_logo"></div>
     <div class="custom_tails_logo"></div>
   </div>
-  <Display class="col-sm-6" />
-  <router-view class="col-sm-6"></router-view>
+  <Display/>
+  <router-view></router-view>
 </div>
 </template>
 

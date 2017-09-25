@@ -7,6 +7,10 @@ $sc-White: white;
 $sc-LGray: lightgray;
 $sc-DGray: darkgray;
 $sc-HLBlue: dodgerblue;
+$sc-xs-max: 399px;
+$sc-xs-min: $sc-xs-max + 1;
+$sc-sm-max: 767px;
+$sc-sm-min: $sc-sm-max + 1;
 
 body {
   font-family: 'Cabin', Helvetica Neue, sans-serif;

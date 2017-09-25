@@ -1,7 +1,7 @@
 <template>
-<div class="display_container">
+<div class="display_container col-sm-8">
   <div class="tail_sample">
-    <img src="https://www.finfunmermaid.com/images/custom-tails-assets/custom-tails-full.png" class="img-responsive">
+    <img src="https://www.finfunmermaid.com/images/custom-tails-assets/custom-tails-full.png" class="img-responsive tail_full">
   </div>
   <div class="scale_sample visible-xs-block">
     <img src="http://finfun.production.na1.netsuitestaging.com/images/custom-tails-assets/custom-tails-sample.png">
