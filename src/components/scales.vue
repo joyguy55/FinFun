@@ -4,9 +4,9 @@
 
       <h5>Select Style</h5>
 
-      <div class="styles_container" v-for="style in scaleStyles">
+      <div :class="[ style.isActive ? 'styles_container active' : 'styles_container' ]" v-for="style in scaleStyles">
             <div class="styles_box">
-                <img src="https://www.finfunmermaid.com/images/custom-tails-assets/scale-1.png"
+                <img :src="style.image"
                      class="fin_choice img-responsive"
                      v-on:click="selectScaleStyle(style.id)">
             </div>

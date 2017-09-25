@@ -16,15 +16,17 @@
               </div>
             </button>
         </div>
-        <Sticker :stickerArr="selectedStickers[position].stickerIds"
-                 :position="position"/>
+        <stickerPicker v-if="stickerBox"
+                       :stickerBox.sync="stickerBox"
+                       :stickerArr="selectedStickers[position].stickerIds"
+                       :position="position"/>
       </div>
   </div>
 </template>
 
 <script>
   import _ from 'underscore'
-  import Sticker from './sub/sticker_picker'
+  import stickerPicker from './sub/sticker_picker'
   import { mapState, mapActions } from 'vuex'
 
   export default {
@@ -32,6 +34,7 @@
     data() {
       return {
         position: 0,
+        stickerBox: false,
       }
     },
     computed: {
@@ -43,10 +46,11 @@
     methods: {
       currentStickerOption(index) {
         this.position = index
+        this.stickerBox = true
       }
     },
     components:{
-        Sticker,
+        stickerPicker,
     }
   }
 </script>

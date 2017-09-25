@@ -3,7 +3,8 @@
         <div class="sticker_picker_container popover_triangle">
             <button type="button"
                     class="close close_box"
-                    aria-label="Close">
+                    aria-label="Close"
+                    v-on:click="closeColorBox()">
                 <span aria-hidden="true">&times;</span>
             </button>
             <button id="sticker_button"
@@ -26,14 +27,14 @@ import {
 } from 'vuex'
 
 export default {
-  name: 'navigation',
+  name: 'sticker_picker',
   data () {
     return {
         triangle_position: [ 24, 50 ],
         currentStickers: this.stickerSet
       }
   },
-  props: ['stickerArr','position'],
+  props: ['stickerArr','position','stickerBox'],
   computed: {
     ...mapState({
       stickers: state => state.stickers,
@@ -55,6 +56,9 @@ export default {
     ...mapActions([
       'selectSticker'
     ]),
+    closeColorBox() {
+      this.$emit('update:stickerBox', false)
+    }
   }
 }
 </script>

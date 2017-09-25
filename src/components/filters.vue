@@ -4,7 +4,7 @@
 
       <h5>Select Style</h5>
 
-      <div class="styles_container" v-for="filter in filters">
+      <div :class="[ filter.isActive ? 'styles_container active' : 'styles_container' ]" v-for="filter in filters">
           <div class="styles_box">
           <img :src="filter.image"
                class="img-responsive"
