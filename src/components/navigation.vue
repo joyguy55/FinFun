@@ -1,5 +1,5 @@
 <template>
-<div class="nav_container col-sm-4">
+<div class="nav_container col-md-6 col-sm-7 col-xs-8">
 
   <ul class="navi-tabs">
     <router-link :to="tab.path" class="nav-link" v-on:click="selectTab(tab.name)" v-for="tab in tabs">

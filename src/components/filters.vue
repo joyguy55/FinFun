@@ -3,10 +3,13 @@
   <div class="options_container">
 
     <h5>Select Style</h5>
-
-    <div class="styles_container" v-for="filter in filters">
-      <div :class="[ filter.isActive ? 'styles_box selected' : 'styles_box' ]">
-        <img :src="filter.image" class="img-responsive" v-on:click="selectStyle({ type:type, filterIndex:filter.id})">
+    <div class="flex_container">
+      <div class="styles_container" v-for="filter in filters">
+        <div :class="[ filter.isActive ? 'styles_box selected' : 'styles_box' ]">
+          <img :src="filter.image" class="img-responsive" v-on:click="selectStyle({ type:type, filterIndex:filter.id})">
+        </div>
+        <div :class="[ filter.isActive ? 'styles_radio selected_radio' : 'styles_radio' ]">
+        </div>
       </div>
     </div>
     <button id="button_override" class="btn btn-default btn-xs">Clear Filters</button>

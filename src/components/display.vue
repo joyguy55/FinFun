@@ -1,5 +1,5 @@
 <template>
-<div class="display_container col-sm-8">
+<div class="display_container col-md-6 col-sm-5 col-xs-4">
   <div class="tail_sample">
     <img src="https://www.finfunmermaid.com/images/custom-tails-assets/custom-tails-full.png" class="img-responsive tail_full">
   </div>

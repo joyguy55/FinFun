@@ -15,6 +15,7 @@ $sc-sm-min: $sc-sm-max + 1;
 
 body {
   font-family: 'Cabin', Helvetica Neue, sans-serif;
+  color: $sc-DGray;
 }
 
 h5,
@@ -22,6 +23,7 @@ small {
   text-align: left;
   text-transform: uppercase;
   margin-left: 5px;
+  color: $sc-DGray;
 }
 
 h5 {
@@ -44,6 +46,7 @@ small {
   box-shadow: none;
   text-decoration: underline;
   color: $sc-HLBlue;
+  margin-top: 10px;
 
   &:active,
   &:hover {
@@ -54,6 +57,8 @@ small {
 .selected {
   border: 1px solid $sc-HLBlue;
 }
-// #app {
-//   transform: scale(2);
-// }
+
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+}

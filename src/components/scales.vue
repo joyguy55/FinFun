@@ -4,9 +4,13 @@
 
     <h5>Select Style</h5>
 
-    <div class="styles_container" v-for="style in scaleStyles">
-      <div :class="[ style.isActive ? 'styles_box selected' : 'styles_box' ]">
-        <img :src="style.image" class="fin_choice img-responsive" v-on:click="selectScaleStyle(style.id)">
+    <div class="flex_container">
+      <div class="styles_container" v-for="style in scaleStyles">
+        <div :class="[ style.isActive ? 'styles_box selected' : 'styles_box' ]">
+          <img :src="style.image" class="fin_choice img-responsive" v-on:click="selectScaleStyle(style.id)">
+        </div>
+        <div :class="[ style.isActive ? 'styles_radio selected_radio' : 'styles_radio' ]">
+        </div>
       </div>
     </div>
 
@@ -16,14 +20,15 @@
   <div class="options_container">
 
     <h5>Scale Colors</h5>
-
-    <div class="color_option" v-for="color in selectedScaleStyle.colors">
-      <div class="outer_circle" :value="color" :key="color" v-on:click="selectColorAtIndex(color)">
-        <div class="inner_circle" :style="{background: color}"></div>
+    <div class="flex_container">
+      <div class="color_option" v-for="color in selectedScaleStyle.colors">
+        <div class="outer_circle" :value="color" :key="color" v-on:click="selectColorAtIndex(color)">
+          <div class="inner_circle" :style="{background: color}"></div>
+        </div>
       </div>
-    </div>
 
-    <ColorPicker class="color_picker" v-if="colorBox" :colorBox.sync="colorBox" :styleIndex="styleIndex" :colorIndex="colorIndex" :type="type" />
+      <ColorPicker class="color_picker" v-if="colorBox" :colorBox.sync="colorBox" :styleIndex="styleIndex" :colorIndex="colorIndex" :type="type" />
+    </div>
   </div>
 </div>
 </template>

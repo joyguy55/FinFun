@@ -4,9 +4,13 @@
 
     <h5>Select Fin Style</h5>
 
-    <div class="styles_container" v-for="style in finStyles">
-      <div :class="[ style.isActive ? 'styles_box selected' : 'styles_box' ]">
-        <img :src="style.image" class="fin_choice" v-on:click="selectScaleStyle(style.id)">
+    <div class="flex_container">
+      <div class="styles_container" v-for="style in finStyles">
+        <div :class="[ style.isActive ? 'styles_box selected' : 'styles_box' ]">
+          <img :src="style.image" class="fin_choice" v-on:click="selectScaleStyle(style.id)">
+        </div>
+        <div :class="[ style.isActive ? 'styles_radio selected_radio' : 'styles_radio' ]">
+        </div>
       </div>
     </div>
   </div>
@@ -14,12 +18,13 @@
 
     <h5>Fin Colors</h5>
 
-    <div class="color_option" v-for="color in selectedFinStyle.colors">
-      <div class="outer_circle">
-        <div :style="{background: color}" class="inner_circle" v-on:click="selectColorAtIndex(color)"></div>
+    <div class="flex_container">
+      <div class="color_option" v-for="color in selectedFinStyle.colors">
+        <div class="outer_circle">
+          <div :style="{background: color}" class="inner_circle" v-on:click="selectColorAtIndex(color)"></div>
+        </div>
       </div>
     </div>
-
     <ColorPicker v-if="colorBox" :type="type" :colorBox.sync="colorBox" :styleIndex="styleIndex" :colorIndex="colorIndex" class="color_picker" />
 
     <button id="button_override" class="btn btn-default btn-xs">Default</button>

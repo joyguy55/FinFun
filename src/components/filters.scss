@@ -5,19 +5,11 @@
   text-align: left;
 
   .styles_container {
-    display: inline-block;
-    margin: auto;
-  }
-
-  .styles_container {
-    display: inline-block;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0 5px;
 
     .styles_box {
-      width: 45px;
-      height: 45px;
-      margin: 0 4px;
+      width: 49px;
+      height: 49px;
       border: 1px solid $sc-DGray;
     }
 
@@ -25,12 +17,17 @@
       border: 1px solid $sc-HLBlue;
     }
 
-    .styles_box_selected {
-      border: 3px solid $sc-HLBlue;
+    .styles_radio {
+      height: 8px;
+      width: 8px;
+      border: 1px solid $sc-LGray;
+      border-radius: 50%;
+      padding: 1px;
+      margin: 5px auto 0;
     }
 
-    .styles_radio {
-      display: inline-block;
+    .selected_radio {
+      background: $sc-HLBlue;
     }
   }
 }
